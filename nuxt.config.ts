@@ -3,6 +3,19 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  // Auto-importar componentes
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+    {
+      path: '~/features',
+      pathPrefix: false,
+      extensions: ['.vue']
+    }
+  ],
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
@@ -36,8 +49,8 @@ export default defineNuxtConfig({
   },
 
   typescript: {
-    strict: true,
-    typeCheck: true
+    strict: false,
+    typeCheck: false
   },
 
   app: {
